@@ -1,3 +1,5 @@
-# raw dumps live here (git-tracked on purpose)
+# raw dumps
 
-Push from the RDP host after running scripts under scripts/.
+Structure: `raw/<ambiente>/<virginia|oregon>/{alb,dominios}/`
+
+Push from RDP after running scripts under `scripts/`.

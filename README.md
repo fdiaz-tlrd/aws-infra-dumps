@@ -1,35 +1,49 @@
 # aws-infra-dumps
 
-Scripts AWS CLI (`.ps1`) + salidas JSON/CSV para estudiar infra (ALB, custom domains, etc.)
-sin copiar/pegar por RDP.
+Scripts AWS CLI (`.ps1`) + salidas JSON/CSV.
+Flujo: clonar en RDP -> ejecutar -> `git push` -> en Lenovo `git pull`.
 
-- **Cuenta GitHub:** [fdiaz-tlrd](https://github.com/fdiaz-tlrd?tab=repositories)
-- **Estudio / narrativa:** repo hermano `second-brain` (`alb/`)
-- **Este repo:** solo scripts + raw dumps
+- GitHub: https://github.com/fdiaz-tlrd/aws-infra-dumps
+- Estudio: `second-brain` (`alb/`)
 
-## En el servidor RDP (con AWS CLI)
+## RDP (sandbox, Virginia + Oregon)
 
 ```powershell
 git clone https://github.com/fdiaz-tlrd/aws-infra-dumps.git
-cd aws-infra-dumps\scripts\sandbox-oregon
+cd aws-infra-dumps
+git pull
 
-.\dump-alb-sandbox-oregon.ps1
+cd scripts
+.\dump-alb.ps1
 .\revisar-dominios-personalizados.ps1
 
-cd ..\..
-git add raw
-git commit -m "dump sandbox oregon"
+cd ..
+git add raw/sandbox
+git commit -m "dump sandbox virginia+oregon"
 git push
 ```
 
-En la Lenovo: `git pull` y analizar (Cursor lee `raw/`).
+Solo una region:
+
+```powershell
+.\dump-alb.ps1 -Regions us-east-1
+.\revisar-dominios-personalizados.ps1 -Regions us-west-2
+```
 
 ## Layout
 
 ```
-scripts/sandbox-oregon/   # .ps1
-raw/sandbox-oregon/alb/   # salida dump ALB
-raw/sandbox-oregon/dominios/  # salida dominios APIGW
+scripts/
+  dump-alb.ps1
+  revisar-dominios-personalizados.ps1
+raw/sandbox/
+  virginia/   # us-east-1
+    alb/<nombre-alb>/
+    dominios/
+  oregon/     # us-west-2
+    alb/<nombre-alb>/
+    dominios/
 ```
 
-Mas ambientes/regiones: `scripts/<celda>/` y `raw/<celda>/` (ej. `prod-virginia`).
+`dump-alb.ps1` busca ALBs cuyo nombre coincida con `*sandbox*` (param `-NameFilter`).
+Los target groups se leen del ALB (no hay nombre fijo).
