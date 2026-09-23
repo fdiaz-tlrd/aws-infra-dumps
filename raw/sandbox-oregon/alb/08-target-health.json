@@ -1,0 +1,58 @@
+{
+    "TargetHealthDescriptions": [
+        {
+            "Target": {
+                "Id": "10.250.43.218",
+                "Port": 443,
+                "AvailabilityZone": "us-west-2b"
+            },
+            "HealthCheckPort": "443",
+            "TargetHealth": {
+                "State": "unhealthy",
+                "Reason": "Target.ResponseCodeMismatch",
+                "Description": "Health checks failed with these codes: [403]"
+            },
+            "AdministrativeOverride": {
+                "State": "no_override",
+                "Reason": "AdministrativeOverride.NoOverride",
+                "Description": "No override is currently active on target"
+            }
+        },
+        {
+            "Target": {
+                "Id": "10.250.44.222",
+                "Port": 443,
+                "AvailabilityZone": "us-west-2c"
+            },
+            "HealthCheckPort": "443",
+            "TargetHealth": {
+                "State": "unhealthy",
+                "Reason": "Target.ResponseCodeMismatch",
+                "Description": "Health checks failed with these codes: [403]"
+            },
+            "AdministrativeOverride": {
+                "State": "no_override",
+                "Reason": "AdministrativeOverride.NoOverride",
+                "Description": "No override is currently active on target"
+            }
+        },
+        {
+            "Target": {
+                "Id": "10.250.42.170",
+                "Port": 443,
+                "AvailabilityZone": "us-west-2a"
+            },
+            "HealthCheckPort": "443",
+            "TargetHealth": {
+                "State": "unhealthy",
+                "Reason": "Target.ResponseCodeMismatch",
+                "Description": "Health checks failed with these codes: [403]"
+            },
+            "AdministrativeOverride": {
+                "State": "no_override",
+                "Reason": "AdministrativeOverride.NoOverride",
+                "Description": "No override is currently active on target"
+            }
+        }
+    ]
+}

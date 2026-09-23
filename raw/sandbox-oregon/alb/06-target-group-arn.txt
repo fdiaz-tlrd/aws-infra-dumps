@@ -1,0 +1,1 @@
+arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011

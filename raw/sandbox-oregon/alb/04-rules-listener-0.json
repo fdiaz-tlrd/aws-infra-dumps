@@ -1,0 +1,545 @@
+{
+    "Rules": [
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener-rule/app/alb-sandbox-oregon/bc8e26a049c22e57/026ddc9f3c6223a6/d6176f08011074a9",
+            "Priority": "1",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-alias.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-alias.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener-rule/app/alb-sandbox-oregon/bc8e26a049c22e57/026ddc9f3c6223a6/78588731d12efa99",
+            "Priority": "2",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-mph.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-mph.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener-rule/app/alb-sandbox-oregon/bc8e26a049c22e57/026ddc9f3c6223a6/9ae6126ec4673f55",
+            "Priority": "3",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-otp.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-otp.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener-rule/app/alb-sandbox-oregon/bc8e26a049c22e57/026ddc9f3c6223a6/41c55ac32209d011",
+            "Priority": "4",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-interna-eclave.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-interna-eclave.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener-rule/app/alb-sandbox-oregon/bc8e26a049c22e57/026ddc9f3c6223a6/67c6d6006c081328",
+            "Priority": "5",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-interna.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-interna.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener-rule/app/alb-sandbox-oregon/bc8e26a049c22e57/026ddc9f3c6223a6/20d0000af6241798",
+            "Priority": "6",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-puente.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-puente.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener-rule/app/alb-sandbox-oregon/bc8e26a049c22e57/026ddc9f3c6223a6/a71944a8fffc7c33",
+            "Priority": "7",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-img.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-img.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener-rule/app/alb-sandbox-oregon/bc8e26a049c22e57/026ddc9f3c6223a6/d9c1936bfa90748d",
+            "Priority": "8",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-sv.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-sv.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener-rule/app/alb-sandbox-oregon/bc8e26a049c22e57/026ddc9f3c6223a6/a255b20750dd628c",
+            "Priority": "9",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-cuenta-nombre.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-cuenta-nombre.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener-rule/app/alb-sandbox-oregon/bc8e26a049c22e57/026ddc9f3c6223a6/73db14c4c6a22c19",
+            "Priority": "11",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-preg-seguridad.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-preg-seguridad.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener-rule/app/alb-sandbox-oregon/bc8e26a049c22e57/026ddc9f3c6223a6/05bdfbd9b7b116a2",
+            "Priority": "12",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-notificacion.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-notificacion.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener-rule/app/alb-sandbox-oregon/bc8e26a049c22e57/026ddc9f3c6223a6/2c58f36bf4e19a38",
+            "Priority": "13",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-validador-dummy.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-validador-dummy.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener-rule/app/alb-sandbox-oregon/bc8e26a049c22e57/026ddc9f3c6223a6/4887b7b33693c74e",
+            "Priority": "16",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-p2m.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-p2m.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener-rule/app/alb-sandbox-oregon/bc8e26a049c22e57/026ddc9f3c6223a6/b67e512838ec9ca8",
+            "Priority": "17",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-achx.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-achx.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:targetgroup/vpc-endpoint-apis-oregon/972320ec6f101011",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener-rule/app/alb-sandbox-oregon/bc8e26a049c22e57/026ddc9f3c6223a6/110ca3bcbe99cee9",
+            "Priority": "default",
+            "Conditions": [],
+            "Actions": [
+                {
+                    "Type": "fixed-response",
+                    "Order": 1,
+                    "FixedResponseConfig": {
+                        "StatusCode": "503",
+                        "ContentType": "text/plain"
+                    }
+                }
+            ],
+            "IsDefault": true,
+            "Transforms": []
+        }
+    ]
+}

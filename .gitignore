@@ -1,0 +1,16 @@
+# OS / editor
+Thumbs.db
+Desktop.ini
+*.swp
+*~
+
+# Secrets / local creds (never commit)
+.env
+.env.*
+*.pem
+*.key
+credentials
+.aws/
+
+# PowerShell / local junk
+*.error.txt

@@ -1,0 +1,49 @@
+{
+    "Listeners": [
+        {
+            "ListenerArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener/app/alb-sandbox-oregon/bc8e26a049c22e57/026ddc9f3c6223a6",
+            "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:loadbalancer/app/alb-sandbox-oregon/bc8e26a049c22e57",
+            "Port": 443,
+            "Protocol": "HTTPS",
+            "Certificates": [
+                {
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/24db24a6-bba3-4ef0-9953-5667dac8583f"
+                }
+            ],
+            "SslPolicy": "ELBSecurityPolicy-TLS-1-2-Ext-2018-06",
+            "DefaultActions": [
+                {
+                    "Type": "fixed-response",
+                    "Order": 1,
+                    "FixedResponseConfig": {
+                        "StatusCode": "503",
+                        "ContentType": "text/plain"
+                    }
+                }
+            ],
+            "MutualAuthentication": {
+                "Mode": "off"
+            }
+        },
+        {
+            "ListenerArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:listener/app/alb-sandbox-oregon/bc8e26a049c22e57/0fa743318f006abc",
+            "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:loadbalancer/app/alb-sandbox-oregon/bc8e26a049c22e57",
+            "Port": 80,
+            "Protocol": "HTTP",
+            "DefaultActions": [
+                {
+                    "Type": "redirect",
+                    "Order": 1,
+                    "RedirectConfig": {
+                        "Protocol": "HTTPS",
+                        "Port": "443",
+                        "Host": "#{host}",
+                        "Path": "/#{path}",
+                        "Query": "#{query}",
+                        "StatusCode": "HTTP_301"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "LoadBalancers": [
+        {
+            "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-west-2:807262913923:loadbalancer/app/alb-sandbox-oregon/bc8e26a049c22e57",
+            "DNSName": "internal-alb-sandbox-oregon-650577187.us-west-2.elb.amazonaws.com",
+            "CanonicalHostedZoneId": "Z1H1FL5HABSF5",
+            "CreatedTime": "2022-01-14T13:37:57.420000+00:00",
+            "LoadBalancerName": "alb-sandbox-oregon",
+            "Scheme": "internal",
+            "VpcId": "vpc-0114fe781e9c2d449",
+            "State": {
+                "Code": "active"
+            },
+            "Type": "application",
+            "AvailabilityZones": [
+                {
+                    "ZoneName": "us-west-2c",
+                    "SubnetId": "subnet-0349e2932ba6bec22",
+                    "LoadBalancerAddresses": []
+                },
+                {
+                    "ZoneName": "us-west-2a",
+                    "SubnetId": "subnet-0bd757a9bcc0dcda5",
+                    "LoadBalancerAddresses": []
+                },
+                {
+                    "ZoneName": "us-west-2b",
+                    "SubnetId": "subnet-0d69bfc85a349018d",
+                    "LoadBalancerAddresses": []
+                }
+            ],
+            "SecurityGroups": [
+                "sg-01104037a6ec8d4e0"
+            ],
+            "IpAddressType": "ipv4",
+            "EnablePrefixForIpv6SourceNat": "off"
+        }
+    ]
+}
