@@ -1,22 +1,16 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-  List API Gateway custom domains and mappings in Virginia and Oregon.
-
-.DESCRIPTION
-  Regions default: us-east-1 (virginia), us-west-2 (oregon).
-  REST + HTTP/v2. Optional cross-check vs ALB host-header rules if present.
-  Output: raw/sandbox/<virginia|oregon>/dominios/
+  Baja custom domains de API Gateway (Virginia y Oregon) y sus mappings.
 
 .EXAMPLE
-  .\revisar-dominios-personalizados.ps1
-  .\revisar-dominios-personalizados.ps1 -Regions us-east-1
+  .\revisar-dominios-personalizados.ps1 -Environment sandbox
 #>
 [CmdletBinding()]
 param(
-  [string[]]$Regions = @('us-east-1', 'us-west-2'),
+  [ValidateSet('sandbox', 'qa', 'prod')]
   [string]$Environment = 'sandbox',
-  [switch]$SkipAlbCrossCheck
+  [string[]]$Regions = @('us-east-1', 'us-west-2')
 )
 
 $ErrorActionPreference = 'Stop'
@@ -25,9 +19,9 @@ $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 function Get-RegionLabel {
   param([string]$Region)
   switch ($Region) {
-    'us-east-1' { return 'virginia' }
-    'us-west-2' { return 'oregon' }
-    default { return ($Region -replace '[^a-zA-Z0-9_-]', '_') }
+    'us-east-1' { 'virginia' }
+    'us-west-2' { 'oregon' }
+    default { $Region }
   }
 }
 
@@ -46,228 +40,102 @@ function Invoke-AwsJson {
   $json = & aws @AwsArgs --region $Region --output json 2>&1
   if ($LASTEXITCODE -ne 0) {
     $json | Set-Content -Encoding utf8 ($OutFile + '.error.txt')
-    throw "aws failed ($OutFile). See $($OutFile).error.txt"
+    throw "aws fallo ($OutFile)"
   }
   if ($json -is [System.Array]) { $json = $json -join "`n" }
   $json | Set-Content -Encoding utf8 $OutFile
   return $json
 }
 
-function Export-DomainsForRegion {
-  param(
-    [string]$Region,
-    [string]$OutDir,
-    [string]$AlbRulesGlob
-  )
+function Export-Region {
+  param([string]$Region, [string]$OutDir)
 
   New-Item -ItemType Directory -Force -Path $OutDir | Out-Null
   Push-Location $OutDir
   try {
-    Write-Host " Domains $Region -> $OutDir" -ForegroundColor Cyan
-
-    $restDomainsRaw = Invoke-AwsJson $Region '01-apigateway-domain-names.json' @(
-      'apigateway', 'get-domain-names'
-    )
-    $restItems = @(($restDomainsRaw | ConvertFrom-Json).items)
+    $restRaw = Invoke-AwsJson $Region '01-domain-names.json' @('apigateway', 'get-domain-names')
+    $restItems = @(($restRaw | ConvertFrom-Json).items)
     if (-not $restItems) { $restItems = @() }
 
     $i = 0
     foreach ($d in $restItems) {
-      $name = $d.domainName
-      $safe = Get-SafeFileName $name
-      $file = ('02-rest-mappings-{0:D2}-{1}.json' -f $i, $safe)
+      $file = ('02-mappings-{0:D2}-{1}.json' -f $i, (Get-SafeFileName $d.domainName))
       try {
         Invoke-AwsJson $Region $file @(
-          'apigateway', 'get-base-path-mappings',
-          '--domain-name', $name
+          'apigateway', 'get-base-path-mappings', '--domain-name', $d.domainName
         ) | Out-Null
       }
       catch {
-        Write-Warning "REST mappings failed for ${name}: $_"
+        Write-Warning "$($d.domainName): $_"
       }
       $i++
     }
 
-    $v2Items = @()
-    try {
-      $v2DomainsRaw = Invoke-AwsJson $Region '03-apigatewayv2-domain-names.json' @(
-        'apigatewayv2', 'get-domain-names'
-      )
-      $v2Items = @(($v2DomainsRaw | ConvertFrom-Json).Items)
-      if (-not $v2Items) { $v2Items = @() }
-    }
-    catch {
-      Write-Warning "apigatewayv2 get-domain-names failed in ${Region}: $_"
-    }
-
-    $j = 0
-    foreach ($d in $v2Items) {
-      $name = $d.DomainName
-      if (-not $name) { $name = $d.domainName }
-      $safe = Get-SafeFileName $name
-      $file = ('04-v2-mappings-{0:D2}-{1}.json' -f $j, $safe)
-      try {
-        Invoke-AwsJson $Region $file @(
-          'apigatewayv2', 'get-api-mappings',
-          '--domain-name', $name
-        ) | Out-Null
-      }
-      catch {
-        Write-Warning "v2 mappings failed for ${name}: $_"
-      }
-      $j++
-    }
-
     $rows = New-Object System.Collections.Generic.List[object]
-
     foreach ($d in $restItems) {
-      $name = $d.domainName
-      $safe = Get-SafeFileName $name
-      $mapFile = Get-ChildItem -Filter ("02-rest-mappings-*-{0}.json" -f $safe) -ErrorAction SilentlyContinue |
-        Select-Object -First 1
-      $mappings = @()
-      $sinMapping = $true
+      $safe = Get-SafeFileName $d.domainName
+      $mapFile = Get-ChildItem -Filter ("02-mappings-*-{0}.json" -f $safe) | Select-Object -First 1
+      $maps = @()
       if ($mapFile) {
-        $mapDoc = Get-Content -Raw $mapFile.FullName | ConvertFrom-Json
-        $mappings = @($mapDoc.items)
-        if (-not $mappings) { $mappings = @() }
-        $sinMapping = ($mappings.Count -eq 0)
+        $maps = @((Get-Content -Raw $mapFile.FullName | ConvertFrom-Json).items)
+        if (-not $maps) { $maps = @() }
       }
-      $mapParts = foreach ($m in $mappings) {
-        $bp = if ($m.basePath) { $m.basePath } else { '(none)' }
-        '{0} -> {1}/{2}' -f $bp, $m.restApiId, $m.stage
-      }
+      $txt = @(foreach ($m in $maps) {
+          $bp = if ($m.basePath) { $m.basePath } else { '(none)' }
+          '{0} -> {1}/{2}' -f $bp, $m.restApiId, $m.stage
+        }) -join '; '
       $rows.Add([pscustomobject]@{
-          Region      = $Region
-          ApiKind     = 'REST'
-          DomainName  = $name
-          DomainStatus = $d.domainNameStatus
-          EndpointType = (@($d.endpointConfiguration.types) -join ',')
-          MappingCount = $mappings.Count
-          SinMapping  = $sinMapping
-          Mappings    = (@($mapParts) -join '; ')
-          RegionalDomainName = $d.regionalDomainName
+          DomainName   = $d.domainName
+          MappingCount = $maps.Count
+          SinMapping   = ($maps.Count -eq 0)
+          Mappings     = $txt
         })
     }
 
-    foreach ($d in $v2Items) {
-      $name = $d.DomainName
-      if (-not $name) { $name = $d.domainName }
-      $safe = Get-SafeFileName $name
-      $mapFile = Get-ChildItem -Filter ("04-v2-mappings-*-{0}.json" -f $safe) -ErrorAction SilentlyContinue |
-        Select-Object -First 1
-      $mappings = @()
-      $sinMapping = $true
-      if ($mapFile) {
-        $mapDoc = Get-Content -Raw $mapFile.FullName | ConvertFrom-Json
-        $mappings = @($mapDoc.Items)
-        if (-not $mappings) { $mappings = @($mapDoc.items) }
-        if (-not $mappings) { $mappings = @() }
-        $sinMapping = ($mappings.Count -eq 0)
-      }
-      $mapParts = foreach ($m in $mappings) {
-        $bp = if ($m.ApiMappingKey) { $m.ApiMappingKey } elseif ($m.apiMappingKey) { $m.apiMappingKey } else { '(none)' }
-        $api = if ($m.ApiId) { $m.ApiId } else { $m.apiId }
-        $stage = if ($m.Stage) { $m.Stage } else { $m.stage }
-        '{0} -> {1}/{2}' -f $bp, $api, $stage
-      }
-      $regional = ''
-      if ($d.DomainNameConfigurations -and $d.DomainNameConfigurations.Count -gt 0) {
-        $regional = $d.DomainNameConfigurations[0].ApiGatewayDomainName
-      }
-      $rows.Add([pscustomobject]@{
-          Region      = $Region
-          ApiKind     = 'HTTP/v2'
-          DomainName  = $name
-          DomainStatus = $d.DomainNameStatus
-          EndpointType = ''
-          MappingCount = $mappings.Count
-          SinMapping  = $sinMapping
-          Mappings    = (@($mapParts) -join '; ')
-          RegionalDomainName = $regional
-        })
-    }
+    $rows | Export-Csv -Path '05-resumen.csv' -NoTypeInformation -Encoding UTF8
 
-    ($rows | ConvertTo-Json -Depth 6) | Set-Content -Encoding utf8 '05-resumen-dominios.json'
-    $rows | Export-Csv -Path '05-resumen-dominios.csv' -NoTypeInformation -Encoding UTF8
-
-    if (-not $SkipAlbCrossCheck -and $AlbRulesGlob) {
-      $ruleFiles = @(Get-Item -Path $AlbRulesGlob -ErrorAction SilentlyContinue)
-      if ($ruleFiles.Count -gt 0) {
-        $albHosts = @()
-        foreach ($rf in $ruleFiles) {
-          $rulesDoc = Get-Content -Raw -LiteralPath $rf.FullName | ConvertFrom-Json
-          foreach ($rule in @($rulesDoc.Rules)) {
-            foreach ($cond in @($rule.Conditions)) {
-              if ($cond.Field -eq 'host-header') {
-                $vals = @($cond.Values)
-                if ($cond.HostHeaderConfig -and $cond.HostHeaderConfig.Values) {
-                  $vals = @($cond.HostHeaderConfig.Values)
-                }
-                foreach ($h in $vals) { $albHosts += $h }
-              }
+    $ruleFiles = @(Get-Item (Join-Path $RepoRoot "raw\$Environment\$(Get-RegionLabel $Region)\alb\*\04-rules-listener-*.json") -ErrorAction SilentlyContinue)
+    if ($ruleFiles.Count -gt 0) {
+      $hosts = @()
+      foreach ($rf in $ruleFiles) {
+        $doc = Get-Content -Raw $rf.FullName | ConvertFrom-Json
+        foreach ($rule in @($doc.Rules)) {
+          foreach ($cond in @($rule.Conditions)) {
+            if ($cond.Field -eq 'host-header') {
+              $vals = @($cond.HostHeaderConfig.Values)
+              if (-not $vals -or -not $vals[0]) { $vals = @($cond.Values) }
+              foreach ($h in $vals) { if ($h) { $hosts += $h } }
             }
           }
         }
-        $albHosts = $albHosts | Select-Object -Unique | Sort-Object
-        $albHosts | Set-Content -Encoding utf8 '06-alb-hosts.txt'
-
-        $domainSet = @{}
-        foreach ($r in $rows) { $domainSet[$r.DomainName] = $r }
-
-        $cruce = foreach ($h in $albHosts) {
-          if (-not $domainSet.ContainsKey($h)) {
-            [pscustomobject]@{
-              AlbHost = $h
-              EnApigw = $false
-              SinMapping = $true
-              Mappings = ''
-              Nota = 'Host on ALB; domain not in get-domain-names for this region'
-            }
-          }
-          else {
-            $r = $domainSet[$h]
-            [pscustomobject]@{
-              AlbHost = $h
-              EnApigw = $true
-              SinMapping = [bool]$r.SinMapping
-              Mappings = $r.Mappings
-              Nota = $(if ($r.SinMapping) { 'Domain exists WITHOUT mapping' } else { 'OK' })
-            }
-          }
-        }
-
-        ($cruce | ConvertTo-Json -Depth 5) | Set-Content -Encoding utf8 '07-cruce-alb-vs-dominios.json'
-        $cruce | Export-Csv -Path '07-cruce-alb-vs-dominios.csv' -NoTypeInformation -Encoding UTF8
-
-        Write-Host '  ALB hosts missing mapping or domain:' -ForegroundColor Yellow
-        $cruce | Where-Object { $_.SinMapping -or -not $_.EnApigw } | Format-Table -AutoSize
       }
+      $hosts = @($hosts | Select-Object -Unique | Sort-Object)
+      $byName = @{}
+      foreach ($r in $rows) { $byName[$r.DomainName] = $r }
+      $cruce = foreach ($h in $hosts) {
+        if ($byName.ContainsKey($h)) {
+          [pscustomobject]@{ Host = $h; EnApigw = $true; SinMapping = [bool]$byName[$h].SinMapping; Mappings = $byName[$h].Mappings }
+        }
+        else {
+          [pscustomobject]@{ Host = $h; EnApigw = $false; SinMapping = $true; Mappings = '' }
+        }
+      }
+      $cruce | Export-Csv -Path '07-cruce-alb.csv' -NoTypeInformation -Encoding UTF8
     }
 
-    Write-Host '  Domains WITHOUT mapping:' -ForegroundColor Yellow
-    $rows | Where-Object { $_.SinMapping } | Format-Table DomainName, ApiKind, MappingCount -AutoSize
+    $sin = @($rows | Where-Object { $_.SinMapping })
+    Write-Host "  dominios: $($rows.Count)  sin mapping: $($sin.Count)"
   }
   finally {
     Pop-Location
   }
 }
 
-Write-Host "Repo: $RepoRoot" -ForegroundColor Cyan
-Write-Host "Regions: $($Regions -join ', ') | env: $Environment"
-
+Write-Host "Salida: raw/$Environment" -ForegroundColor Cyan
 foreach ($Region in $Regions) {
-  $label = Get-RegionLabel $Region
-  $outDir = Join-Path $RepoRoot "raw\$Environment\$label\dominios"
-  $albRulesGlob = Join-Path $RepoRoot "raw\$Environment\$label\alb\*\04-rules-listener-*.json"
   Write-Host ""
-  Write-Host "=== $label ($Region) ===" -ForegroundColor Green
-  Export-DomainsForRegion -Region $Region -OutDir $outDir -AlbRulesGlob $albRulesGlob
+  Write-Host "$(Get-RegionLabel $Region) ($Region)" -ForegroundColor Green
+  Export-Region $Region (Join-Path $RepoRoot "raw\$Environment\$(Get-RegionLabel $Region)\dominios")
 }
-
 Write-Host ""
-Write-Host "Done. From repo root:" -ForegroundColor Green
-Write-Host "  git add raw/$Environment"
-Write-Host "  git commit -m `"domains dump $Environment virginia+oregon`""
-Write-Host "  git push"
-Write-Host "Tip: run dump-alb.ps1 first so ALB cross-check can use 04-rules-listener-*.json"
+Write-Host "Listo: raw/$Environment" -ForegroundColor Green

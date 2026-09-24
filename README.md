@@ -1,49 +1,26 @@
 # aws-infra-dumps
 
-Scripts AWS CLI (`.ps1`) + salidas JSON/CSV.
-Flujo: clonar en RDP -> ejecutar -> `git push` -> en Lenovo `git pull`.
-
-- GitHub: https://github.com/fdiaz-tlrd/aws-infra-dumps
-- Estudio: `second-brain` (`alb/`)
-
-## RDP (sandbox, Virginia + Oregon)
+Cuenta AWS activa = el ambiente que estes mirando.
 
 ```powershell
-git clone https://github.com/fdiaz-tlrd/aws-infra-dumps.git
-cd aws-infra-dumps
-git pull
-
-cd scripts
-.\dump-alb.ps1
-.\revisar-dominios-personalizados.ps1
-
-cd ..
-git add raw/sandbox
-git commit -m "dump sandbox virginia+oregon"
-git push
+cd aws-infra-dumps\scripts
+.\dump-por-ambiente.ps1 -Ambiente Sandbox
+.\dump-por-ambiente.ps1 -Ambiente QA
+.\dump-por-ambiente.ps1 -Ambiente Produccion
 ```
 
-Solo una region:
+EFS `/mnt/tld-llaves` de la lambda `tld-alias-cuenta` (Virginia y Oregon):
 
 ```powershell
-.\dump-alb.ps1 -Regions us-east-1
-.\revisar-dominios-personalizados.ps1 -Regions us-west-2
+.\dump-efs-llaves.ps1 -Ambiente Sandbox
+.\dump-efs-llaves.ps1 -Ambiente QA
+.\dump-efs-llaves.ps1 -Ambiente Produccion
 ```
 
-## Layout
+Solo ver nombres de ALB:
 
-```
-scripts/
-  dump-alb.ps1
-  revisar-dominios-personalizados.ps1
-raw/sandbox/
-  virginia/   # us-east-1
-    alb/<nombre-alb>/
-    dominios/
-  oregon/     # us-west-2
-    alb/<nombre-alb>/
-    dominios/
+```powershell
+.\listar-albs.ps1
 ```
 
-`dump-alb.ps1` busca ALBs cuyo nombre coincida con `*sandbox*` (param `-NameFilter`).
-Los target groups se leen del ALB (no hay nombre fijo).
+Salida: `raw/sandbox`, `raw/qa`, `raw/prod` (cada uno con `virginia` y `oregon`).
