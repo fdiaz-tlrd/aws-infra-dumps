@@ -1,0 +1,14 @@
+﻿tld-achx.sand.telered.internal
+tld-api-alias.sand.telered.internal
+tld-api-cuenta-nombre.sand.telered.internal
+tld-api-interna.sand.telered.internal
+tld-api-interna-eclave.sand.telered.internal
+tld-api-mph.sand.telered.internal
+tld-api-p2m.sand.telered.internal
+tld-api-puente.sand.telered.internal
+tld-img.sand.telered.internal
+tld-notificacion.sand.telered.internal
+tld-otp.sand.telered.internal
+tld-preg-seguridad.sand.telered.internal
+tld-sv.sand.telered.internal
+tld-validador-dummy.sand.telered.internal

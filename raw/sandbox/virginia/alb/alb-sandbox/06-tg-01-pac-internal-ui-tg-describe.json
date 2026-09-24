@@ -1,0 +1,28 @@
+﻿{
+    "TargetGroups": [
+        {
+            "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/pac-internal-ui-tg/652ec8282b147c09",
+            "TargetGroupName": "pac-internal-ui-tg",
+            "Protocol": "HTTP",
+            "Port": 8080,
+            "VpcId": "vpc-06869a7b9aaeae0e8",
+            "HealthCheckProtocol": "HTTP",
+            "HealthCheckPort": "traffic-port",
+            "HealthCheckEnabled": true,
+            "HealthCheckIntervalSeconds": 30,
+            "HealthCheckTimeoutSeconds": 5,
+            "HealthyThresholdCount": 5,
+            "UnhealthyThresholdCount": 2,
+            "HealthCheckPath": "/",
+            "Matcher": {
+                "HttpCode": "200"
+            },
+            "LoadBalancerArns": [
+                "arn:aws:elasticloadbalancing:us-east-1:807262913923:loadbalancer/app/alb-sandbox/b5dd9d72488b1dcb"
+            ],
+            "TargetType": "instance",
+            "ProtocolVersion": "HTTP1",
+            "IpAddressType": "ipv4"
+        }
+    ]
+}

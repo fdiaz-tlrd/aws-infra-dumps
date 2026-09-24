@@ -1,0 +1,19 @@
+﻿{
+    "TargetHealthDescriptions": [
+        {
+            "Target": {
+                "Id": "i-0d8de565b3d00afad",
+                "Port": 3000
+            },
+            "HealthCheckPort": "3000",
+            "TargetHealth": {
+                "State": "healthy"
+            },
+            "AdministrativeOverride": {
+                "State": "no_override",
+                "Reason": "AdministrativeOverride.NoOverride",
+                "Description": "No override is currently active on target"
+            }
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+﻿{
+    "TargetHealthDescriptions": [
+        {
+            "Target": {
+                "Id": "i-0d8de565b3d00afad",
+                "Port": 8080
+            },
+            "HealthCheckPort": "8080",
+            "TargetHealth": {
+                "State": "healthy"
+            },
+            "AdministrativeOverride": {
+                "State": "no_override",
+                "Reason": "AdministrativeOverride.NoOverride",
+                "Description": "No override is currently active on target"
+            }
+        }
+    ]
+}

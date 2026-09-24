@@ -1,0 +1,899 @@
+﻿{
+    "Rules": [
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/b28dbfc78aaa4520",
+            "Priority": "1",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-alias.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-alias.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/25a848ef9cf43b51",
+            "Priority": "2",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-validador.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-validador.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/1e0d8b08d8545529",
+            "Priority": "3",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-mph.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-mph.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/f8484f9438200e87",
+            "Priority": "4",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-sv.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-sv.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/028dd933633c5c75",
+            "Priority": "5",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-img.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-img.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/381bc2472abddf94",
+            "Priority": "6",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-puente.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-puente.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/1201fcd3280ca823",
+            "Priority": "7",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-interna.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-interna.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/50b472ba9ec52c4d",
+            "Priority": "8",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-interna-eclave.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-interna-eclave.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/bbadf9a9d3277fa4",
+            "Priority": "9",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-otp.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-otp.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/902352d082ce0f33",
+            "Priority": "10",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-cuenta-nombre.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-cuenta-nombre.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/132732e8e21b0cf2",
+            "Priority": "11",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-preg-seguridad.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-preg-seguridad.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/e0b2beac79b0b11f",
+            "Priority": "12",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-notificacion.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-notificacion.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/c25068c33ffd91a1",
+            "Priority": "13",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-validador-dummy.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-validador-dummy.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/e196c1593a919189",
+            "Priority": "14",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "pac.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "pac.sand.telered.internal"
+                        ]
+                    }
+                },
+                {
+                    "Field": "path-pattern",
+                    "Values": [
+                        "/validador/*"
+                    ],
+                    "PathPatternConfig": {
+                        "Values": [
+                            "/validador/*"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/pac-internal-api-tg/7f74a3e3934e3158",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/pac-internal-api-tg/7f74a3e3934e3158",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/19e56b827495a8fe",
+            "Priority": "15",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "pac.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "pac.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/pac-internal-ui-tg/652ec8282b147c09",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/pac-internal-ui-tg/652ec8282b147c09",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/004f2e2c2db2a006",
+            "Priority": "16",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "vcnach-tlrdpapa.test.telered.com.pa",
+                        "4vcnach-tlrdpapa.test.telered.com.pa"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "vcnach-tlrdpapa.test.telered.com.pa",
+                            "4vcnach-tlrdpapa.test.telered.com.pa"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/edb9a2214885a3a6",
+            "Priority": "17",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-p2m.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-p2m.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/c8a4dc674f11887e",
+            "Priority": "18",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-achx.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-achx.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/46f5921653457abf",
+            "Priority": "19",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-r2p.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-r2p.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/fe7ec9976db154ea",
+            "Priority": "20",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "canal-validador-dummy.sand1.telered.com.pa"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "canal-validador-dummy.sand1.telered.com.pa"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/4572075039316a81",
+            "Priority": "21",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "canal-validador-dummy.sand3.telered.com.pa"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "canal-validador-dummy.sand3.telered.com.pa"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/c10246fc458f9407",
+            "Priority": "22",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "tld-api-qrpayment.sand.telered.internal"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "tld-api-qrpayment.sand.telered.internal"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/3650c03f6e9eb139",
+            "Priority": "23",
+            "Conditions": [
+                {
+                    "Field": "host-header",
+                    "Values": [
+                        "*.sand.telered.internal.pci"
+                    ],
+                    "HostHeaderConfig": {
+                        "Values": [
+                            "*.sand.telered.internal.pci"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false,
+                            "DurationSeconds": 3600
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:listener-rule/app/alb-sandbox/b5dd9d72488b1dcb/479149e4ddf6d689/33c573f592eefc1d",
+            "Priority": "default",
+            "Conditions": [],
+            "Actions": [
+                {
+                    "Type": "fixed-response",
+                    "Order": 1,
+                    "FixedResponseConfig": {
+                        "StatusCode": "503",
+                        "ContentType": "text/plain"
+                    }
+                }
+            ],
+            "IsDefault": true,
+            "Transforms": []
+        }
+    ]
+}

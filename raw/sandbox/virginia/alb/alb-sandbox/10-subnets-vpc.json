@@ -1,0 +1,56 @@
+﻿[
+    {
+        "SubnetId": "subnet-0a368593654a9d2b2",
+        "Az": "us-east-1b",
+        "Cidr": "10.250.38.0/24",
+        "Name": "B-PrivateSubnet2-AZ-B"
+    },
+    {
+        "SubnetId": "subnet-044b02f2be4f50fec",
+        "Az": "us-east-1a",
+        "Cidr": "10.250.37.0/24",
+        "Name": "B-PrivateSubnet1-AZ-A"
+    },
+    {
+        "SubnetId": "subnet-073da6f0db6885407",
+        "Az": "us-east-1b",
+        "Cidr": "10.250.35.0/24",
+        "Name": "A-PrivateSubnet2-AZ-B"
+    },
+    {
+        "SubnetId": "subnet-02e61cb65f5fcc637",
+        "Az": "us-east-1c",
+        "Cidr": "10.250.39.0/24",
+        "Name": "B-PrivateSubnet3-AZ-C"
+    },
+    {
+        "SubnetId": "subnet-0c6ded9917acd6559",
+        "Az": "us-east-1a",
+        "Cidr": "10.250.32.0/25",
+        "Name": "PublicSubnet1-AZ-A"
+    },
+    {
+        "SubnetId": "subnet-0baba120b23a710cc",
+        "Az": "us-east-1a",
+        "Cidr": "10.250.34.0/24",
+        "Name": "A-PrivateSubnet1-AZ-A"
+    },
+    {
+        "SubnetId": "subnet-0b24bc0e2f2bc7d5a",
+        "Az": "us-east-1b",
+        "Cidr": "10.250.32.128/25",
+        "Name": "PublicSubnet2-AZ-B"
+    },
+    {
+        "SubnetId": "subnet-052421100e0a15e95",
+        "Az": "us-east-1c",
+        "Cidr": "10.250.36.0/24",
+        "Name": "A-PrivateSubnet3-AZ-C"
+    },
+    {
+        "SubnetId": "subnet-00f8708f6b2be3799",
+        "Az": "us-east-1c",
+        "Cidr": "10.250.33.0/24",
+        "Name": "PublicSubnet3-AZ-C"
+    }
+]

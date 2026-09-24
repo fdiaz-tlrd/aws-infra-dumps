@@ -1,0 +1,263 @@
+﻿{
+    "Items": [
+        {
+            "ApiMappingSelectionExpression": "$request.basepath",
+            "DomainName": "apigatesb.telered.com.pa",
+            "DomainNameArn": "arn:aws:apigateway:us-west-2::/domainnames/apigatesb.telered.com.pa",
+            "DomainNameConfigurations": [
+                {
+                    "ApiGatewayDomainName": "d-1708xozfm4.execute-api.us-west-2.amazonaws.com",
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/4bef43f4-1fcc-42c8-b284-643387883418",
+                    "DomainNameStatus": "AVAILABLE",
+                    "EndpointType": "REGIONAL",
+                    "HostedZoneId": "Z2OJLYMUO9EFXC",
+                    "SecurityPolicy": "TLS_1_2"
+                }
+            ],
+            "RoutingMode": "API_MAPPING_ONLY"
+        },
+        {
+            "ApiMappingSelectionExpression": "$request.basepath",
+            "DomainName": "secondary.apigatesb.telered.com.pa",
+            "DomainNameArn": "arn:aws:apigateway:us-west-2::/domainnames/secondary.apigatesb.telered.com.pa",
+            "DomainNameConfigurations": [
+                {
+                    "ApiGatewayDomainName": "d-kp93i2w60c.execute-api.us-west-2.amazonaws.com",
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/8dc32993-37d8-4d53-adbc-4bacccdbd957",
+                    "DomainNameStatus": "AVAILABLE",
+                    "EndpointType": "REGIONAL",
+                    "HostedZoneId": "Z2OJLYMUO9EFXC",
+                    "SecurityPolicy": "TLS_1_2"
+                }
+            ],
+            "RoutingMode": "API_MAPPING_ONLY"
+        },
+        {
+            "ApiMappingSelectionExpression": "$request.basepath",
+            "DomainName": "tld-achx.sand.telered.internal",
+            "DomainNameArn": "arn:aws:apigateway:us-west-2::/domainnames/tld-achx.sand.telered.internal",
+            "DomainNameConfigurations": [
+                {
+                    "ApiGatewayDomainName": "d-c18a6vcdj1.execute-api.us-west-2.amazonaws.com",
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/24db24a6-bba3-4ef0-9953-5667dac8583f",
+                    "DomainNameStatus": "AVAILABLE",
+                    "EndpointType": "REGIONAL",
+                    "HostedZoneId": "Z2OJLYMUO9EFXC",
+                    "SecurityPolicy": "TLS_1_2"
+                }
+            ],
+            "RoutingMode": "API_MAPPING_ONLY"
+        },
+        {
+            "ApiMappingSelectionExpression": "$request.basepath",
+            "DomainName": "tld-api-alias.sand.telered.internal",
+            "DomainNameArn": "arn:aws:apigateway:us-west-2::/domainnames/tld-api-alias.sand.telered.internal",
+            "DomainNameConfigurations": [
+                {
+                    "ApiGatewayDomainName": "d-wohgki32x6.execute-api.us-west-2.amazonaws.com",
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/24db24a6-bba3-4ef0-9953-5667dac8583f",
+                    "DomainNameStatus": "AVAILABLE",
+                    "EndpointType": "REGIONAL",
+                    "HostedZoneId": "Z2OJLYMUO9EFXC",
+                    "SecurityPolicy": "TLS_1_2"
+                }
+            ],
+            "RoutingMode": "API_MAPPING_ONLY"
+        },
+        {
+            "ApiMappingSelectionExpression": "$request.basepath",
+            "DomainName": "tld-api-cuenta-nombre.sand.telered.internal",
+            "DomainNameArn": "arn:aws:apigateway:us-west-2::/domainnames/tld-api-cuenta-nombre.sand.telered.internal",
+            "DomainNameConfigurations": [
+                {
+                    "ApiGatewayDomainName": "d-ib1pvk76pe.execute-api.us-west-2.amazonaws.com",
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/24db24a6-bba3-4ef0-9953-5667dac8583f",
+                    "DomainNameStatus": "AVAILABLE",
+                    "EndpointType": "REGIONAL",
+                    "HostedZoneId": "Z2OJLYMUO9EFXC",
+                    "SecurityPolicy": "TLS_1_2"
+                }
+            ],
+            "RoutingMode": "API_MAPPING_ONLY"
+        },
+        {
+            "ApiMappingSelectionExpression": "$request.basepath",
+            "DomainName": "tld-api-interna-eclave.sand.telered.internal",
+            "DomainNameArn": "arn:aws:apigateway:us-west-2::/domainnames/tld-api-interna-eclave.sand.telered.internal",
+            "DomainNameConfigurations": [
+                {
+                    "ApiGatewayDomainName": "d-vewvgit5qa.execute-api.us-west-2.amazonaws.com",
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/24db24a6-bba3-4ef0-9953-5667dac8583f",
+                    "DomainNameStatus": "AVAILABLE",
+                    "EndpointType": "REGIONAL",
+                    "HostedZoneId": "Z2OJLYMUO9EFXC",
+                    "SecurityPolicy": "TLS_1_2"
+                }
+            ],
+            "RoutingMode": "API_MAPPING_ONLY"
+        },
+        {
+            "ApiMappingSelectionExpression": "$request.basepath",
+            "DomainName": "tld-api-interna.sand.telered.internal",
+            "DomainNameArn": "arn:aws:apigateway:us-west-2::/domainnames/tld-api-interna.sand.telered.internal",
+            "DomainNameConfigurations": [
+                {
+                    "ApiGatewayDomainName": "d-vrsat0w6ik.execute-api.us-west-2.amazonaws.com",
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/24db24a6-bba3-4ef0-9953-5667dac8583f",
+                    "DomainNameStatus": "AVAILABLE",
+                    "EndpointType": "REGIONAL",
+                    "HostedZoneId": "Z2OJLYMUO9EFXC",
+                    "SecurityPolicy": "TLS_1_2"
+                }
+            ],
+            "RoutingMode": "API_MAPPING_ONLY"
+        },
+        {
+            "ApiMappingSelectionExpression": "$request.basepath",
+            "DomainName": "tld-api-mph.sand.telered.internal",
+            "DomainNameArn": "arn:aws:apigateway:us-west-2::/domainnames/tld-api-mph.sand.telered.internal",
+            "DomainNameConfigurations": [
+                {
+                    "ApiGatewayDomainName": "d-0j7gsq8hwe.execute-api.us-west-2.amazonaws.com",
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/24db24a6-bba3-4ef0-9953-5667dac8583f",
+                    "DomainNameStatus": "AVAILABLE",
+                    "EndpointType": "REGIONAL",
+                    "HostedZoneId": "Z2OJLYMUO9EFXC",
+                    "SecurityPolicy": "TLS_1_2"
+                }
+            ],
+            "RoutingMode": "API_MAPPING_ONLY"
+        },
+        {
+            "ApiMappingSelectionExpression": "$request.basepath",
+            "DomainName": "tld-api-p2m.sand.telered.internal",
+            "DomainNameArn": "arn:aws:apigateway:us-west-2::/domainnames/tld-api-p2m.sand.telered.internal",
+            "DomainNameConfigurations": [
+                {
+                    "ApiGatewayDomainName": "d-obdrd12bre.execute-api.us-west-2.amazonaws.com",
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/24db24a6-bba3-4ef0-9953-5667dac8583f",
+                    "DomainNameStatus": "AVAILABLE",
+                    "EndpointType": "REGIONAL",
+                    "HostedZoneId": "Z2OJLYMUO9EFXC",
+                    "SecurityPolicy": "TLS_1_2"
+                }
+            ],
+            "RoutingMode": "API_MAPPING_ONLY"
+        },
+        {
+            "ApiMappingSelectionExpression": "$request.basepath",
+            "DomainName": "tld-api-puente.sand.telered.internal",
+            "DomainNameArn": "arn:aws:apigateway:us-west-2::/domainnames/tld-api-puente.sand.telered.internal",
+            "DomainNameConfigurations": [
+                {
+                    "ApiGatewayDomainName": "d-ukxl4130f6.execute-api.us-west-2.amazonaws.com",
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/24db24a6-bba3-4ef0-9953-5667dac8583f",
+                    "DomainNameStatus": "AVAILABLE",
+                    "EndpointType": "REGIONAL",
+                    "HostedZoneId": "Z2OJLYMUO9EFXC",
+                    "SecurityPolicy": "TLS_1_2"
+                }
+            ],
+            "RoutingMode": "API_MAPPING_ONLY"
+        },
+        {
+            "ApiMappingSelectionExpression": "$request.basepath",
+            "DomainName": "tld-img.sand.telered.internal",
+            "DomainNameArn": "arn:aws:apigateway:us-west-2::/domainnames/tld-img.sand.telered.internal",
+            "DomainNameConfigurations": [
+                {
+                    "ApiGatewayDomainName": "d-2o830wwna4.execute-api.us-west-2.amazonaws.com",
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/24db24a6-bba3-4ef0-9953-5667dac8583f",
+                    "DomainNameStatus": "AVAILABLE",
+                    "EndpointType": "REGIONAL",
+                    "HostedZoneId": "Z2OJLYMUO9EFXC",
+                    "SecurityPolicy": "TLS_1_2"
+                }
+            ],
+            "RoutingMode": "API_MAPPING_ONLY"
+        },
+        {
+            "ApiMappingSelectionExpression": "$request.basepath",
+            "DomainName": "tld-notificacion.sand.telered.internal",
+            "DomainNameArn": "arn:aws:apigateway:us-west-2::/domainnames/tld-notificacion.sand.telered.internal",
+            "DomainNameConfigurations": [
+                {
+                    "ApiGatewayDomainName": "d-r4mna17yzc.execute-api.us-west-2.amazonaws.com",
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/24db24a6-bba3-4ef0-9953-5667dac8583f",
+                    "DomainNameStatus": "AVAILABLE",
+                    "EndpointType": "REGIONAL",
+                    "HostedZoneId": "Z2OJLYMUO9EFXC",
+                    "SecurityPolicy": "TLS_1_2"
+                }
+            ],
+            "RoutingMode": "API_MAPPING_ONLY"
+        },
+        {
+            "ApiMappingSelectionExpression": "$request.basepath",
+            "DomainName": "tld-otp.sand.telered.internal",
+            "DomainNameArn": "arn:aws:apigateway:us-west-2::/domainnames/tld-otp.sand.telered.internal",
+            "DomainNameConfigurations": [
+                {
+                    "ApiGatewayDomainName": "d-dep4wycvod.execute-api.us-west-2.amazonaws.com",
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/24db24a6-bba3-4ef0-9953-5667dac8583f",
+                    "DomainNameStatus": "AVAILABLE",
+                    "EndpointType": "REGIONAL",
+                    "HostedZoneId": "Z2OJLYMUO9EFXC",
+                    "SecurityPolicy": "TLS_1_2"
+                }
+            ],
+            "RoutingMode": "API_MAPPING_ONLY"
+        },
+        {
+            "ApiMappingSelectionExpression": "$request.basepath",
+            "DomainName": "tld-preg-seguridad.sand.telered.internal",
+            "DomainNameArn": "arn:aws:apigateway:us-west-2::/domainnames/tld-preg-seguridad.sand.telered.internal",
+            "DomainNameConfigurations": [
+                {
+                    "ApiGatewayDomainName": "d-vku8isfo7f.execute-api.us-west-2.amazonaws.com",
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/24db24a6-bba3-4ef0-9953-5667dac8583f",
+                    "DomainNameStatus": "AVAILABLE",
+                    "EndpointType": "REGIONAL",
+                    "HostedZoneId": "Z2OJLYMUO9EFXC",
+                    "SecurityPolicy": "TLS_1_2"
+                }
+            ],
+            "RoutingMode": "API_MAPPING_ONLY"
+        },
+        {
+            "ApiMappingSelectionExpression": "$request.basepath",
+            "DomainName": "tld-sv.sand.telered.internal",
+            "DomainNameArn": "arn:aws:apigateway:us-west-2::/domainnames/tld-sv.sand.telered.internal",
+            "DomainNameConfigurations": [
+                {
+                    "ApiGatewayDomainName": "d-9r2tl7plqi.execute-api.us-west-2.amazonaws.com",
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/24db24a6-bba3-4ef0-9953-5667dac8583f",
+                    "DomainNameStatus": "AVAILABLE",
+                    "EndpointType": "REGIONAL",
+                    "HostedZoneId": "Z2OJLYMUO9EFXC",
+                    "SecurityPolicy": "TLS_1_2"
+                }
+            ],
+            "RoutingMode": "API_MAPPING_ONLY"
+        },
+        {
+            "ApiMappingSelectionExpression": "$request.basepath",
+            "DomainName": "tld-validador-dummy.sand.telered.internal",
+            "DomainNameArn": "arn:aws:apigateway:us-west-2::/domainnames/tld-validador-dummy.sand.telered.internal",
+            "DomainNameConfigurations": [
+                {
+                    "ApiGatewayDomainName": "d-bp2cwwfb0f.execute-api.us-west-2.amazonaws.com",
+                    "CertificateArn": "arn:aws:acm:us-west-2:807262913923:certificate/24db24a6-bba3-4ef0-9953-5667dac8583f",
+                    "DomainNameStatus": "AVAILABLE",
+                    "EndpointType": "REGIONAL",
+                    "HostedZoneId": "Z2OJLYMUO9EFXC",
+                    "SecurityPolicy": "TLS_1_2"
+                }
+            ],
+            "RoutingMode": "API_MAPPING_ONLY",
+            "Tags": {
+                "Name": "tld-validador-dummy"
+            }
+        }
+    ]
+}

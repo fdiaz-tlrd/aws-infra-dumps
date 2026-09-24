@@ -1,0 +1,10 @@
+﻿{
+    "Region":  "us-west-2",
+    "Label":  "oregon",
+    "NameFilter":  "*sandbox*",
+    "TotalInRegion":  1,
+    "MatchedCount":  1,
+    "MatchedNames":  [
+                         "alb-sandbox-oregon"
+                     ]
+}

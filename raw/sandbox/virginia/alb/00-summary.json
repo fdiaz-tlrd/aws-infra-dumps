@@ -1,0 +1,10 @@
+﻿{
+    "Region":  "us-east-1",
+    "Label":  "virginia",
+    "NameFilter":  "*sandbox*",
+    "TotalInRegion":  2,
+    "MatchedCount":  1,
+    "MatchedNames":  [
+                         "alb-sandbox"
+                     ]
+}

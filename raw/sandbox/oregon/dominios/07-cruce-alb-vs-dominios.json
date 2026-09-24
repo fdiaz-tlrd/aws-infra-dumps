@@ -1,0 +1,100 @@
+﻿[
+    {
+        "AlbHost":  "tld-achx.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e yh1cbsn8pl/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-alias.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e mfkamhvkr1/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-cuenta-nombre.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e be2l8khwxh/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-interna.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e on51vkhiuj/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-interna-eclave.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e dkx1d44dj6/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-mph.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e g83ggbdabk/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-p2m.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e w079wvartb/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-puente.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e avy1trij71/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-img.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e t96q3mg3fl/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-notificacion.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e wh8hqrtj37/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-otp.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e kcrn3bpxqf/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-preg-seguridad.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e ckvh05el33/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-sv.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e d0oqttwuo2/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-validador-dummy.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e 788n02djik/sandbox",
+        "Nota":  "OK"
+    }
+]

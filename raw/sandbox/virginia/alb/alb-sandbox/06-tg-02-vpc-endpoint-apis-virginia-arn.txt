@@ -1,0 +1,1 @@
+﻿arn:aws:elasticloadbalancing:us-east-1:807262913923:targetgroup/vpc-endpoint-apis-virginia/d5f258e4cbf57a72

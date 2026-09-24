@@ -1,0 +1,52 @@
+﻿{
+    "TargetHealthDescriptions": [
+        {
+            "Target": {
+                "Id": "10.250.36.16",
+                "Port": 443,
+                "AvailabilityZone": "us-east-1c"
+            },
+            "HealthCheckPort": "443",
+            "TargetHealth": {
+                "State": "healthy"
+            },
+            "AdministrativeOverride": {
+                "State": "no_override",
+                "Reason": "AdministrativeOverride.NoOverride",
+                "Description": "No override is currently active on target"
+            }
+        },
+        {
+            "Target": {
+                "Id": "10.250.35.24",
+                "Port": 443,
+                "AvailabilityZone": "us-east-1b"
+            },
+            "HealthCheckPort": "443",
+            "TargetHealth": {
+                "State": "healthy"
+            },
+            "AdministrativeOverride": {
+                "State": "no_override",
+                "Reason": "AdministrativeOverride.NoOverride",
+                "Description": "No override is currently active on target"
+            }
+        },
+        {
+            "Target": {
+                "Id": "10.250.34.20",
+                "Port": 443,
+                "AvailabilityZone": "us-east-1a"
+            },
+            "HealthCheckPort": "443",
+            "TargetHealth": {
+                "State": "healthy"
+            },
+            "AdministrativeOverride": {
+                "State": "no_override",
+                "Reason": "AdministrativeOverride.NoOverride",
+                "Description": "No override is currently active on target"
+            }
+        }
+    ]
+}

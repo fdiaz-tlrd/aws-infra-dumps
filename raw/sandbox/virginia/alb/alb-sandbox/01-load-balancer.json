@@ -1,0 +1,39 @@
+﻿{
+    "LoadBalancers": [
+        {
+            "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-1:807262913923:loadbalancer/app/alb-sandbox/b5dd9d72488b1dcb",
+            "DNSName": "internal-alb-sandbox-1003606040.us-east-1.elb.amazonaws.com",
+            "CanonicalHostedZoneId": "Z35SXDOTRQ7X7K",
+            "CreatedTime": "2022-01-11T15:00:15.820000+00:00",
+            "LoadBalancerName": "alb-sandbox",
+            "Scheme": "internal",
+            "VpcId": "vpc-06869a7b9aaeae0e8",
+            "State": {
+                "Code": "active"
+            },
+            "Type": "application",
+            "AvailabilityZones": [
+                {
+                    "ZoneName": "us-east-1c",
+                    "SubnetId": "subnet-052421100e0a15e95",
+                    "LoadBalancerAddresses": []
+                },
+                {
+                    "ZoneName": "us-east-1b",
+                    "SubnetId": "subnet-073da6f0db6885407",
+                    "LoadBalancerAddresses": []
+                },
+                {
+                    "ZoneName": "us-east-1a",
+                    "SubnetId": "subnet-0baba120b23a710cc",
+                    "LoadBalancerAddresses": []
+                }
+            ],
+            "SecurityGroups": [
+                "sg-095a9a67eb6adc206"
+            ],
+            "IpAddressType": "ipv4",
+            "EnablePrefixForIpv6SourceNat": "off"
+        }
+    ]
+}

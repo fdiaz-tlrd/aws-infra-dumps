@@ -1,0 +1,163 @@
+﻿[
+    {
+        "AlbHost":  "*.sand.telered.internal.pci",
+        "EnApigw":  false,
+        "SinMapping":  true,
+        "Mappings":  "",
+        "Nota":  "Host on ALB; domain not in get-domain-names for this region"
+    },
+    {
+        "AlbHost":  "4vcnach-tlrdpapa.test.telered.com.pa",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e rprkg84d75/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "canal-validador-dummy.sand1.telered.com.pa",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e rprkg84d75/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "canal-validador-dummy.sand3.telered.com.pa",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e rprkg84d75/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "pac.sand.telered.internal",
+        "EnApigw":  false,
+        "SinMapping":  true,
+        "Mappings":  "",
+        "Nota":  "Host on ALB; domain not in get-domain-names for this region"
+    },
+    {
+        "AlbHost":  "tld-achx.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e r4qazjirmh/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-alias.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e ig6072lrq2/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-cuenta-nombre.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e ozm2269dil/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-interna.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e 2e6tcxnimb/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-interna-eclave.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e b4hxgsl47k/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-mph.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e a01g28rhs9/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-p2m.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e i8ol3apl8a/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-puente.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e x4989hzlcf/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-qrpayment.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e wpxteqonlg/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-r2p.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e z9a90yw6rk/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-api-validador.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e mk6nq3dm1m/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-img.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e 5ca3iqbi59/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-notificacion.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e 7gpqm6i9qi/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-otp.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e e0ll5jj8k6/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-preg-seguridad.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e akfjrne9o9/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-sv.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e k4txamsz0g/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "tld-validador-dummy.sand.telered.internal",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e rprkg84d75/sandbox",
+        "Nota":  "OK"
+    },
+    {
+        "AlbHost":  "vcnach-tlrdpapa.test.telered.com.pa",
+        "EnApigw":  true,
+        "SinMapping":  false,
+        "Mappings":  "(none) -\u003e rprkg84d75/sandbox",
+        "Nota":  "OK"
+    }
+]
